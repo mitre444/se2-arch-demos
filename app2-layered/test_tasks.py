@@ -23,3 +23,10 @@ def test_stats_observer_counts_correctly():
     assert observer.total == 1
     assert observer.high_count == 1
     assert observer.pending == 1
+
+def test_task_can_be_marked_done():
+    task = TaskFactory.create("Finish homework", "medium")
+    assert task.done == False
+
+    task.done = True
+    assert task.done == True
